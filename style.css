@@ -1,0 +1,63 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin:0;
+    padding:0;
+  }
+  body{
+    background-image: linear-gradient(lightblue,purple);
+    text-align:center;
+  }
+  
+  #header{
+    display:flex;
+    justify-content:center;
+    background-color:pink;
+    font-size:25px;
+    color:black;
+    text-decoration:underline;
+    text-decoration-color: black;
+    height:50px;
+    align-items:center;
+    font-family:'Times New Roman', Times, serif;
+  }
+  
+  #todo-submit{
+    height:40px;
+    width:40px;
+  }
+  #todo-submit:hover{
+    cursor:pointer;
+  }
+  
+  .todo{
+    color:darkblue;
+    background-color:lightgoldenrodyellow;
+    width:200px;
+    margin:8px;
+    padding:8px;
+  }
+  
+  
+  #todo-input{
+    height:40px;
+  }
+  /* A list of properties I used */
+  /*
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width
+    height
+    padding
+    margin
+    font-size
+    color
+    background-color
+    background-image: url()
+    border
+    border-radius
+    text-align: center;
+    cursor: pointer;
+  */
+  
