@@ -3,7 +3,7 @@
 /*******************/
 // todoList = ["steve", "bob", "sam"]
 let todoList = []
-// load todoList from localstorage
+// load todoList from localstorage(Allows to save data)
 window.addEventListener('load', () => {
 
   let inputEl = document.querySelector("#todo-input");

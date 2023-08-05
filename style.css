@@ -7,14 +7,13 @@ body {
 }
 
 body {
-    background-image: linear-gradient(lightblue, purple);
+    background-color:lightcoral;
     text-align: center;
 }
 
 #header {
     display: flex;
     justify-content: center;
-    background-color: pink;
     font-size: 25px;
     color: black;
     text-decoration: underline;
