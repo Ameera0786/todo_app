@@ -1,11 +1,10 @@
 /*******************/
 /*** MY TODO APP ***/
 /*******************/
-// todoList = ["steve", "bob", "sam"]
+
 let todoList = []
 // load todoList from localstorage(Allows to save data)
 window.addEventListener('load', () => {
-
   let inputEl = document.querySelector("#todo-input");
   inputEl.focus();
 
@@ -29,6 +28,7 @@ buttonEl.addEventListener('click', () => {
 
 });
 
+// If enter button clicked on keyboard, it submits a new item to todo-list
 let inputEl = document.querySelector("#todo-input");
 inputEl.addEventListener('keypress', (event) => {
   if (event.key == "Enter") {
@@ -36,6 +36,7 @@ inputEl.addEventListener('keypress', (event) => {
   }
 })
 
+// Prints out todo items to screen, but not empty one
 function getLoadTodo() {
   // Get the value from the input [.querySelector(), .value]
   let inputEl = document.querySelector("#todo-input");
@@ -51,22 +52,13 @@ function getLoadTodo() {
   // Add the todoList to localstorage
   localStorage.setItem("todos", JSON.stringify(todoList));
 
-
   makeTodo(todo);
-
 }
 
-
-
-
-
-
-
-
+// Create a todo div to add to todo-list
 function makeTodo(todo) {
   // Get the todo list element from the document [.querySelector()]
   let todoListEl = document.querySelector("#todo-list");
-
 
   // Create a new div that will contain the new todo [.createElement()]
   let newtododiv = document.createElement("div");
@@ -76,7 +68,6 @@ function makeTodo(todo) {
 
   // Add the todo text to the new div we just made [.innerHTML]
   newtododiv.innerHTML = todo;
-
 
   // Add the eventListener to the delete button [.children[0], .addEventListener()]
   newtododiv.addEventListener('click', (event) => {
@@ -92,5 +83,4 @@ function makeTodo(todo) {
 
   // Add the todo div to the page [.appendChild()]
   todoListEl.appendChild(newtododiv);
-
 }

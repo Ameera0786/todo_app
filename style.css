@@ -6,11 +6,13 @@ body {
     padding: 0;
 }
 
+/* Main page*/
 body {
-    background-color:lightcoral;
+    background-color:lightcyan;
     text-align: center;
 }
 
+/* Title*/
 #header {
     display: flex;
     justify-content: center;
@@ -23,6 +25,7 @@ body {
     font-family: 'Times New Roman', Times, serif;
 }
 
+/* Button to submit */
 #todo-submit {
     height: 40px;
     width: 40px;
@@ -32,17 +35,38 @@ body {
     cursor: pointer;
 }
 
+/* Individually made divs*/
 .todo {
+    display:flex;
+    align-items: center;
+    justify-content: center;
     color: darkblue;
     background-color: lightgoldenrodyellow;
-    width: 200px;
-    margin: 8px;
-    padding: 8px;
+    width: 100%;
+    max-width: 200px; /* Optional: Set a max width for each item */
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #ccc; /* Border for todos */
+    border-radius: 4px; /* Rounded corners */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    box-sizing: border-box; /* Ensure padding is included in width */
 }
 
-
+/* Box to input text*/
 #todo-input {
     height: 40px;
+    margin-bottom: 30px;
+}
+
+/* Div parent container - holds all divs of list of to do items*/
+#todo-list {
+    display: flex;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); /* Change 3 to the number of columns you want */
+    width: 100%;
+    gap: 20px; /* Space between items */
+    margin: 0 auto;
 }
 
 /* A list of properties I used */
