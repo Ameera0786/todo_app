@@ -2,6 +2,7 @@
 /*** MY TODO APP ***/
 /*******************/
 
+//For future, store the positions of the dragged versions of the divs.
 let todoList = []
 // load todoList from localstorage(Allows to save data)
 window.addEventListener('load', () => {
