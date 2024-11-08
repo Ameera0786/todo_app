@@ -50,6 +50,8 @@ body {
     border-radius: 4px; /* Rounded corners */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
     box-sizing: border-box; /* Ensure padding is included in width */
+
+    cursor: move; /* Drag*/
 }
 
 /* Box to input text*/
@@ -67,6 +69,7 @@ body {
     width: 100%;
     gap: 20px; /* Space between items */
     margin: 0 auto;
+    position: relative;
 }
 
 /* A list of properties I used */

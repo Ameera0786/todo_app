@@ -69,6 +69,61 @@ function makeTodo(todo) {
   // Add the todo text to the new div we just made [.innerHTML]
   newtododiv.innerHTML = todo;
 
+ //CHATGPT - MAKE IT DRAGGABLE
+  // Make the new todo item draggable
+  newtododiv.setAttribute("draggable", "true");
+
+  // Handle drag start event to indicate the item being dragged
+  newtododiv.addEventListener('dragstart', (event) => {
+    event.dataTransfer.setData('text', todo);  // Store the text of the todo
+    setTimeout(() => {
+      newtododiv.style.display = "none"; // Hide the dragged item temporarily
+    }, 0);
+  });
+
+  // Handle drag end event to restore the visibility of the item
+  newtododiv.addEventListener('dragend', () => {
+    newtododiv.style.display = "block";  // Show the dragged item again
+  });
+
+  // Handle the drop event to move the item
+  newtododiv.addEventListener('dragover', (event) => {
+    event.preventDefault();  // Allow the drop
+    newtododiv.style.border = "2px solid #000"; // Optional: Add visual indication while dragging
+  });
+
+  newtododiv.addEventListener('dragleave', () => {
+    newtododiv.style.border = "";  // Reset border when leaving
+  });
+
+  newtododiv.addEventListener('drop', (event) => {
+    event.preventDefault();
+    const draggedTodoText = event.dataTransfer.getData('text');
+
+    // Find the dragged and dropped todo divs
+    let draggedTodoDiv = Array.from(todoListEl.children).find(child => child.innerHTML === draggedTodoText);
+
+    // Swap the items in the DOM
+    if (draggedTodoDiv !== newtododiv) {
+      const allTodos = Array.from(todoListEl.children);
+      const draggedIndex = allTodos.indexOf(draggedTodoDiv);
+      const droppedIndex = allTodos.indexOf(newtododiv);
+
+      // Swap items in the todo list array
+      [todoList[draggedIndex], todoList[droppedIndex]] = [todoList[droppedIndex], todoList[draggedIndex]];
+
+      // Update localStorage with the new order
+      localStorage.setItem("todos", JSON.stringify(todoList));
+
+      // Rearrange the DOM elements
+      todoListEl.insertBefore(draggedTodoDiv, newtododiv);
+    }
+
+    newtododiv.style.border = ""; // Reset border after drop
+  });
+
+  //END CHATGPT
+
   // Add the eventListener to the delete button [.children[0], .addEventListener()]
   newtododiv.addEventListener('click', (event) => {
     // Remove todo from screen
