@@ -50,7 +50,6 @@ body {
     border-radius: 4px; /* Rounded corners */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
     box-sizing: border-box; /* Ensure padding is included in width */
-
     cursor: move; /* Drag*/
 }
 
@@ -62,9 +61,8 @@ body {
 
 /* Div parent container - holds all divs of list of to do items*/
 #todo-list {
-    display: flex;
-    justify-content: center;
     display: grid;
+    place-items: center;
     grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); /* Change 3 to the number of columns you want */
     width: 100%;
     gap: 20px; /* Space between items */
